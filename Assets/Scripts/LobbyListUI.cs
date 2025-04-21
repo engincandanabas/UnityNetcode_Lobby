@@ -13,6 +13,7 @@ public class LobbyListUI : MonoBehaviour
     public static LobbyListUI Instance {  get; private set; }
 
     [SerializeField] private Button createLobbyButton;
+    [SerializeField] private Button refreshLobbyButton;
     [SerializeField] private Transform lobbyListContainer;
     [SerializeField] private Transform lobbySingleTemplate;
 
@@ -24,6 +25,7 @@ public class LobbyListUI : MonoBehaviour
     private void Start()
     {
         createLobbyButton.onClick.AddListener(CreateLobbyButton);
+        refreshLobbyButton.onClick.AddListener(RefreshButtonClick);
         LobbyManager.Instance.OnLobbyListChanged += LobbyManager_OnLobbyListChanged;
         LobbyManager.Instance.OnJoinedLobby += LobbyManager_OnJoinedLobby;
         LobbyManager.Instance.OnLeftLobby += LobbyManager_OnLeftLobby;
@@ -54,7 +56,10 @@ public class LobbyListUI : MonoBehaviour
         Hide();
         CreateLobbyUI.Instance.Show();
     }
- 
+    private void RefreshButtonClick()
+    {
+        LobbyManager.Instance.RefreshLobbyList();
+    }
     private void UpdateLobbyList(List<Lobby> lobbyList)
     {
         foreach (Transform child in lobbyListContainer)

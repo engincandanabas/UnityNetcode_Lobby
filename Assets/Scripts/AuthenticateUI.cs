@@ -24,6 +24,7 @@ public class AuthenticateUI : MonoBehaviour
                 // do nothing
                 Debug.Log("Signed in! " + AuthenticationService.Instance.PlayerId);
                 LobbyManager.Instance.UpdatePlayerName(playerName);
+                LobbyManager.Instance.RefreshLobbyList();
                 Hide();
                 LobbyListUI.Instance.Show();
             };
