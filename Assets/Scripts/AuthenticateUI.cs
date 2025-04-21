@@ -23,7 +23,7 @@ public class AuthenticateUI : MonoBehaviour
             AuthenticationService.Instance.SignedIn += () => {
                 // do nothing
                 Debug.Log("Signed in! " + AuthenticationService.Instance.PlayerId);
-
+                LobbyManager.Instance.UpdatePlayerName(playerName);
                 Hide();
                 
             };
