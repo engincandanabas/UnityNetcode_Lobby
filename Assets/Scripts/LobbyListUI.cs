@@ -21,6 +21,8 @@ public class LobbyListUI : MonoBehaviour
     {
         Instance = this;
         Hide();
+
+        lobbySingleTemplate.gameObject.SetActive(false);
     }
     private void Start()
     {
@@ -62,6 +64,7 @@ public class LobbyListUI : MonoBehaviour
     }
     private void UpdateLobbyList(List<Lobby> lobbyList)
     {
+        Debug.Log("Lobby List Count : " + lobbyList.Count);
         foreach (Transform child in lobbyListContainer)
         {
             if (child == lobbySingleTemplate) continue;

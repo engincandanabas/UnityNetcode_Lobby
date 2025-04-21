@@ -36,7 +36,7 @@ public class CreateLobbyUI : MonoBehaviour
         LobbyManager.Instance.CreateLobby(
                 lobbyNameField.text,
                 lobbyMaxPlayerDropDown.value,
-                lobbyVisibilityToggle.isOn
+                !lobbyVisibilityToggle.isOn
             );
     }
     private void LobbyNameField_OnValueChanged(string value)
