@@ -33,12 +33,8 @@ public class LobbyManager : MonoBehaviour
         public List<Lobby> lobbyList;
     }
 
-    public enum GameMode
-    {
-        DeathMatch,
-        Premier
-    }
 
+    private float heartbeatTimer;
     private string playerName = "";
     private Lobby joinedLobby;
 
@@ -46,7 +42,26 @@ public class LobbyManager : MonoBehaviour
     {
         Instance = this;
     }
-    public async void CreateLobby(string lobbyName, int maxPlayers, bool isPrivate, GameMode gameMode)
+    private void Update()
+    {
+        HandleLobbyHeartbeat();
+    }
+    private async void HandleLobbyHeartbeat()
+    {
+        if (IsLobbyHost())
+        {
+            heartbeatTimer -= Time.deltaTime;
+            if (heartbeatTimer < 0f)
+            {
+                float heartbeatTimerMax = 15f;
+                heartbeatTimer = heartbeatTimerMax;
+
+                Debug.Log("Heartbeat");
+                await LobbyService.Instance.SendHeartbeatPingAsync(joinedLobby.Id);
+            }
+        }
+    }
+    public async void CreateLobby(string lobbyName, int maxPlayers, bool isPrivate)
     {
         Player player = GetPlayer();
 
@@ -55,7 +70,6 @@ public class LobbyManager : MonoBehaviour
             Player= player,
             IsPrivate= isPrivate,
             Data = new Dictionary<string, DataObject> {
-                { KEY_GAME_MODE, new DataObject(DataObject.VisibilityOptions.Public, gameMode.ToString()) },
                 { KEY_RELAY_JOIN_CODE, new DataObject(DataObject.VisibilityOptions.Member, "") }
             }
         };
@@ -73,6 +87,14 @@ public class LobbyManager : MonoBehaviour
         return new Player(AuthenticationService.Instance.PlayerId, null, new Dictionary<string, PlayerDataObject> {
             { KEY_PLAYER_NAME, new PlayerDataObject(PlayerDataObject.VisibilityOptions.Public, playerName) }
         });
+    }
+    public bool IsLobbyHost()
+    {
+        return joinedLobby != null && joinedLobby.HostId == AuthenticationService.Instance.PlayerId;
+    }
+    public Lobby GetJoinedLobby()
+    {
+        return joinedLobby;
     }
     public void UpdatePlayerName(string playerName)
     {

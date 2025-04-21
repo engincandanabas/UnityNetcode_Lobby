@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static LobbyManager;
 
 public class CreateLobbyUI : MonoBehaviour
 {
@@ -8,10 +9,15 @@ public class CreateLobbyUI : MonoBehaviour
 
     [SerializeField] private TMP_InputField lobbyNameField;
     [SerializeField] private Toggle lobbyVisibilityToggle;
-    [SerializeField] private Dropdown lobbyMaxPlayerDropDown;
+    [SerializeField] private TMP_Dropdown lobbyMaxPlayerDropDown;
     [SerializeField] private Button exitButton;
     [SerializeField] private Button createButton;
 
+    private void Awake()
+    {
+        Instance = this;
+        Hide();
+    }
 
     private void Start()
     {
@@ -27,7 +33,11 @@ public class CreateLobbyUI : MonoBehaviour
     }
     private void CreateLobby()
     {
-
+        LobbyManager.Instance.CreateLobby(
+                lobbyNameField.text,
+                lobbyMaxPlayerDropDown.value,
+                lobbyVisibilityToggle.isOn
+            );
     }
     private void LobbyNameField_OnValueChanged(string value)
     {

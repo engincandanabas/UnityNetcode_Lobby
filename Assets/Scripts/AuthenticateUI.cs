@@ -25,7 +25,7 @@ public class AuthenticateUI : MonoBehaviour
                 Debug.Log("Signed in! " + AuthenticationService.Instance.PlayerId);
                 LobbyManager.Instance.UpdatePlayerName(playerName);
                 Hide();
-                
+                LobbyListUI.Instance.Show();
             };
 
             await AuthenticationService.Instance.SignInAnonymouslyAsync();

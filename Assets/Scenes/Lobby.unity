@@ -746,6 +746,7 @@ GameObject:
   - component: {fileID: 258129727}
   - component: {fileID: 258129726}
   - component: {fileID: 258129728}
+  - component: {fileID: 258129729}
   m_Layer: 5
   m_Name: LobbyListSingleTemplate
   m_TagString: Untagged
@@ -857,6 +858,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &258129729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258129724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9586b96227eb54a978a7ee532ac424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lobbyNameText: {fileID: 1600574090}
+  playersText: {fileID: 688170920}
 --- !u!1 &295559209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,9 +1224,9 @@ RectTransform:
   - {fileID: 2076256768}
   m_Father: {fileID: 1213719413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 358.01715, y: -350.16266}
   m_SizeDelta: {x: 675.2964, y: 169.8237}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &441804356
@@ -1246,9 +1261,9 @@ RectTransform:
   - {fileID: 1107089490}
   m_Father: {fileID: 1213719413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 358.01715, y: -194.6344}
   m_SizeDelta: {x: 675.2964, y: 141.2328}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &491963180
@@ -1695,19 +1710,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548919274}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 194060311}
   - {fileID: 2095577145}
-  m_Father: {fileID: 1862950296}
+  m_Father: {fileID: 2063321724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31529167, y: 0.16125922}
   m_AnchorMax: {x: 0.68700004, y: 0.25659257}
-  m_AnchoredPosition: {x: -1.8213806, y: 1.5}
-  m_SizeDelta: {x: 1.5200195, y: -3}
+  m_AnchoredPosition: {x: -0.62124634, y: -74.46478}
+  m_SizeDelta: {x: 449.23746, y: 21.886703}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &548919276
 MonoBehaviour:
@@ -2442,7 +2457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7297907, y: 0.2648351}
   m_AnchorMax: {x: 0.89423835, y: 0.777}
-  m_AnchoredPosition: {x: 0.2999878, y: 0.79999924}
+  m_AnchoredPosition: {x: 0.2999878, y: 0.80000305}
   m_SizeDelta: {x: -0.4212036, y: -2.9574003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688170920
@@ -3132,9 +3147,9 @@ RectTransform:
   - {fileID: 1949620348}
   m_Father: {fileID: 1213719413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 358.01715, y: -62.009}
   m_SizeDelta: {x: 616.3745, y: 124.018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940843455
@@ -4980,9 +4995,9 @@ RectTransform:
   - {fileID: 768177616}
   m_Father: {fileID: 1213719413}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 358.01715, y: -491.7097}
   m_SizeDelta: {x: 294.9751, y: 113.2704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1768353610
@@ -5112,8 +5127,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1862950296}
+  - component: {fileID: 1862950297}
   m_Layer: 5
-  m_Name: LobbyUI
+  m_Name: LobbyListUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5132,8 +5148,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2063321724}
-  - {fileID: 548919275}
-  - {fileID: 1928415483}
   m_Father: {fileID: 296248095}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5141,6 +5155,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1862950297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862950295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4e6f2b7fcbf3442a6202d935453c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createLobbyButton: {fileID: 194060312}
+  lobbyListContainer: {fileID: 1928415483}
+  lobbySingleTemplate: {fileID: 258129725}
 --- !u!1 &1928415482
 GameObject:
   m_ObjectHideFlags: 0
@@ -5165,18 +5194,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928415482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 258129725}
-  m_Father: {fileID: 1862950296}
+  m_Father: {fileID: 2063321724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31529167, y: 0.25659257}
   m_AnchorMax: {x: 0.68229175, y: 0.7647778}
-  m_AnchoredPosition: {x: 11.815887, y: -0.10601807}
-  m_SizeDelta: {x: -23.6318, y: -0.45}
+  m_AnchoredPosition: {x: 10.18045, y: 2.703308}
+  m_SizeDelta: {x: 418.41458, y: 132.21156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928415484
 MonoBehaviour:
@@ -5348,7 +5377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2035263834
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5381,11 +5410,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eaab0e165ad1d1408d985c8fe4aa9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lobbyNameField: {fileID: 0}
-  lobbyVisibilityToggle: {fileID: 0}
-  lobbyMaxPlayerDropDown: {fileID: 0}
-  exitButton: {fileID: 0}
-  createButton: {fileID: 0}
+  lobbyNameField: {fileID: 940843455}
+  lobbyVisibilityToggle: {fileID: 1107089491}
+  lobbyMaxPlayerDropDown: {fileID: 2076256769}
+  exitButton: {fileID: 646850225}
+  createButton: {fileID: 1768353610}
 --- !u!1 &2063321723
 GameObject:
   m_ObjectHideFlags: 0
@@ -5417,6 +5446,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 781906816}
+  - {fileID: 548919275}
+  - {fileID: 1928415483}
   m_Father: {fileID: 1862950296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31529167, y: 0.12962963}
