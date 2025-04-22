@@ -86,6 +86,17 @@ public class LobbyManager : MonoBehaviour
 
         Debug.Log("Created Lobby " + lobby.Name);
     }
+    public async void JoinLobby(Lobby lobby)
+    {
+        Player player = GetPlayer();
+
+        joinedLobby = await LobbyService.Instance.JoinLobbyByIdAsync(lobby.Id, new JoinLobbyByIdOptions
+        {
+            Player = player
+        });
+
+        OnJoinedLobby?.Invoke(this, new LobbyEventArgs { lobby = lobby });
+    }
     public async void LeaveLobby()
     {
         if (joinedLobby != null)
