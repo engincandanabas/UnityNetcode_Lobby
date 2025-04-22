@@ -33,6 +33,7 @@ public class CreateLobbyUI : MonoBehaviour
     }
     private void CreateLobby()
     {
+        Hide();
         LobbyManager.Instance.CreateLobby(
                 lobbyNameField.text,
                 lobbyMaxPlayerDropDown.value,
