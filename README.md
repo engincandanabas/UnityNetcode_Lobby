@@ -88,3 +88,5 @@ handlers.ReleaseUsername = function (args) {
 
     return { success: true };
 };
+
+![Login](Assets/Screenshots/login1.png)
