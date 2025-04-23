@@ -91,7 +91,7 @@ handlers.ReleaseUsername = function (args) {
 };
 ```
 
-#Images
+## 🚀 Images
 <p align="center">
 <img src="https://github.com/user-attachments/assets/36d8633c-4564-4a2a-847e-b2bbbd1d9d40"  width="300" height="200" >
 <img src="https://github.com/user-attachments/assets/9fca22ea-9096-4c20-aaff-75308a56a19b"  width="300" height="200" >
