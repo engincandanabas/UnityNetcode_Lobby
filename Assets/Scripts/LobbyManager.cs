@@ -153,6 +153,7 @@ public class LobbyManager : MonoBehaviour
 
         OnJoinedLobby?.Invoke(this, new LobbyEventArgs { lobby = lobby });
     }
+    
     public async void LeaveLobby()
     {
         if (joinedLobby != null)
@@ -291,25 +292,6 @@ public class LobbyManager : MonoBehaviour
         {
             Debug.Log(e);
         }
-    }
-    public async Task<bool> IsUsernameTaken(string username)
-    {
-        var lobbies = await LobbyService.Instance.QueryLobbiesAsync();
-
-        foreach (var lobby in lobbies.Results)
-        {
-            foreach (var player in lobby.Players)
-            {
-                if (player.Data != null && player.Data.ContainsKey(KEY_PLAYER_NAME))
-                {
-                    if (player.Data[KEY_PLAYER_NAME].Value == username)
-                    {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
     }
     private Player GetPlayer()
     {
