@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 public class LobbyManager : MonoBehaviour
 {
@@ -270,6 +271,45 @@ public class LobbyManager : MonoBehaviour
         {
             Debug.Log(e);
         }
+    }
+    public async void SetRelayJoinCode(string relayJoinCode)
+    {
+        try
+        {
+            Debug.Log("SetRelayJoinCode " + relayJoinCode);
+
+            Lobby lobby = await LobbyService.Instance.UpdateLobbyAsync(joinedLobby.Id, new UpdateLobbyOptions
+            {
+                Data = new Dictionary<string, DataObject> {
+                    { KEY_RELAY_JOIN_CODE, new DataObject(DataObject.VisibilityOptions.Member, relayJoinCode) }
+                }
+            });
+
+            joinedLobby = lobby;
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.Log(e);
+        }
+    }
+    public async Task<bool> IsUsernameTaken(string username)
+    {
+        var lobbies = await LobbyService.Instance.QueryLobbiesAsync();
+
+        foreach (var lobby in lobbies.Results)
+        {
+            foreach (var player in lobby.Players)
+            {
+                if (player.Data != null && player.Data.ContainsKey(KEY_PLAYER_NAME))
+                {
+                    if (player.Data[KEY_PLAYER_NAME].Value == username)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
     private Player GetPlayer()
     {

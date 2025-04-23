@@ -15,6 +15,14 @@ public class AuthenticateUI : MonoBehaviour
         loginButton.onClick.AddListener(async () =>
         {
             playerName = usernameField.text;
+
+            bool taken = await LobbyManager.Instance.IsUsernameTaken(playerName);
+            if (taken)
+            {
+                
+                return;
+            }
+
             InitializationOptions initializationOptions = new InitializationOptions();
             initializationOptions.SetProfile(playerName);
 
