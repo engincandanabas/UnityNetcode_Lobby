@@ -83,10 +83,22 @@ handlers.ReleaseUsername = function (args) {
                 Key: "UsedUsernames",
                 Value: JSON.stringify(usedList)
             });
+
         }
     }
 
     return { success: true };
 };
 
-![Login](https://imgur.com/FGonD3V)
+![login1](https://github.com/user-attachments/assets/36d8633c-4564-4a2a-847e-b2bbbd1d9d40)
+
+![login2](https://github.com/user-attachments/assets/9fca22ea-9096-4c20-aaff-75308a56a19b)
+
+![lobbyList](https://github.com/user-attachments/assets/5f840926-c49a-48cf-b8d4-aa99a5a7bf28)
+
+![createLobby](https://github.com/user-attachments/assets/d8ed7dc8-1cde-473f-a20e-fd9cd6236bd7)
+
+![lobbyUI](https://github.com/user-attachments/assets/9c9f5e40-5f02-4863-abcf-25e0b6e7e344)
+
+
+
