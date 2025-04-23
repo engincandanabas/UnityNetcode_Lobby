@@ -89,9 +89,9 @@ handlers.ReleaseUsername = function (args) {
 
     return { success: true };
 };
-
-<img src="https://github.com/user-attachments/assets/36d8633c-4564-4a2a-847e-b2bbbd1d9d40"  width="400" height="400" >
-
+<p align="center">
+<img src="https://github.com/user-attachments/assets/36d8633c-4564-4a2a-847e-b2bbbd1d9d40.png"  width="400" height="400" >
+</p>
 ![login2](https://github.com/user-attachments/assets/9fca22ea-9096-4c20-aaff-75308a56a19b)
 
 ![lobbyList](https://github.com/user-attachments/assets/5f840926-c49a-48cf-b8d4-aa99a5a7bf28)
