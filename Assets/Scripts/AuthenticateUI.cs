@@ -24,20 +24,8 @@ public class AuthenticateUI : MonoBehaviour
 
             playerName = usernameField.text;
 
-            PlayFabCloudUsername.Instance.CheckUsername(playerName, (isAvailable) =>
-            {
-                if (isAvailable)
-                {
-                    Debug.Log("Bu kullanýcý adý kullanýlabilir.");
-                    InitializeServices();
-                }
-                else
-                {
-                    Debug.Log("Bu kullanýcý adý alýnmýþ.");
-                    exitPanel.SetActive(true);
-                }
-            });
-            
+            InitializeServices();
+
         });
 
         usernameField.onValueChanged.AddListener(Usernamefield_OnValueChanged);
